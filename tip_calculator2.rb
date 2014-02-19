@@ -19,7 +19,7 @@ class TipCalc
 
   def print_values
     print_attributes
-    puts "total amount due: #{total.round(2)}"
+    puts "total amount due: #{total}"
   end
 
   def grab_user_values
@@ -43,7 +43,7 @@ class TipCalc
     random = output.sample
     puts "the meal was #{meal_plus_tax}"
     puts "the tip is #{random}"
-    puts "the total is #{meal_plus_tax + meal_plus_tax * random}"
+    puts "the total is #{(meal_plus_tax + meal_plus_tax) * random}"
   end
 
   def end_interface
