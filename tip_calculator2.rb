@@ -19,7 +19,7 @@ class TipCalc
 
   def print_values
     print_attributes
-    puts "total amount due: #{total}"
+    puts "total amount due: #{total.round(2)}"
   end
 
   def grab_user_values
