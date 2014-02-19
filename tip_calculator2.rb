@@ -43,7 +43,7 @@ class TipCalc
     random = output.sample
     puts "the meal was #{meal_plus_tax}"
     puts "the tip is #{random}"
-    puts "the total is #{(meal_plus_tax + meal_plus_tax) * random}"
+    puts "the total is #{meal_plus_tax + meal_plus_tax * random}"
   end
 
   def end_interface
