@@ -1,6 +1,6 @@
 class TipCalc
   def initialize
-    @meal, @tax, @tip = 10.00, 0, 0
+    @meal, @tax, @tip = Float(0), Float(0), Float(0)
   end 
     
   def calculate_rate(base, percentage)
@@ -9,7 +9,6 @@ class TipCalc
   end
 
   def print_values
-    @tip = Float(@tip)
     meal_plus_tax = @meal + calculate_rate(@meal, @tax)
     total = meal_plus_tax + calculate_rate(meal_plus_tax, @tip)
     puts "cost of meal #{@meal}"
