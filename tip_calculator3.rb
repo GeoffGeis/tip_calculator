@@ -9,6 +9,10 @@ class TipCalc
   end
 
   def print_values
+    3.times do 
+      print "/";sleep(0.1);print "\b";print "-";sleep(0.1);print "\b";
+      print "\\";sleep(0.1);print "\b";print "|";sleep(0.1);print "\b"
+    end
     meal_plus_tax = @meal + calculate_rate(@meal, @tax)
     total = meal_plus_tax + calculate_rate(meal_plus_tax, @tip)
     puts "cost of meal $#{@meal}"
@@ -38,10 +42,6 @@ class TipCalc
   end
 
   def random_tip
-    3.times do 
-      print "/";sleep(0.1);print "\b";print "-";sleep(0.1);print "\b";
-      print "\\";sleep(0.1);print "\b";print "|";sleep(0.1);print "\b"
-    end
     output = (0..30).map { |i| i }
     @tip = output.sample.to_f
   end
