@@ -38,7 +38,10 @@ class TipCalc
   end
 
   def random_tip
-    puts "*rolls dice.. 0 <-> 30"
+    3.times do 
+      print "/";sleep(0.1);print "\b";print "-";sleep(0.1);print "\b";
+      print "\\";sleep(0.1);print "\b";print "|";sleep(0.1);print "\b"
+    end
     output = (0..30).map { |i| i }
     @tip = output.sample.to_f
   end
