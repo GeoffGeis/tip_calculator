@@ -1,6 +1,6 @@
 class TipCalc
   def initialize
-    @meal, @tax, @tip = Float(0), Float(0), Float(0)
+    @meal, @tax, @tip = 0.to_f, 0.to_f, 0.to_f
   end 
     
   def calculate_rate(base, percentage)
@@ -11,17 +11,17 @@ class TipCalc
   def print_values
     meal_plus_tax = @meal + calculate_rate(@meal, @tax)
     total = meal_plus_tax + calculate_rate(meal_plus_tax, @tip)
-    puts "cost of meal #{@meal}"
-    puts "tax #{@tax}"
-    puts "tip #{@tip}"
+    puts "cost of meal $#{@meal}"
+    puts "tax #{@tax}%"
+    puts "tip #{@tip}%"
     puts "total amount due: $%.2f\n" % total
   end
 
   def grab_user_values
-    puts "Please input the meal cost 00.00"
-    @meal = Float(gets)
-    puts "Please input the tax 0"
-    @tax = Float(gets)
+    puts "Please input the meal cost $0.00"
+    @meal = gets.chomp.to_f
+    puts "Please input the tax 0%"
+    @tax = gets.chomp.to_f
     puts "Would you like to give a random tip? (y/n)"
     input = gets.chomp.to_s.downcase
     while input != 'y' and input != 'n'
@@ -32,8 +32,8 @@ class TipCalc
       random_tip
     end
     if input == 'n'
-       puts "input tip 0"
-       @tip = Float(gets)
+       puts "input tip 0%"
+      @tip = gets.chomp.to_f
     end
   end
 
