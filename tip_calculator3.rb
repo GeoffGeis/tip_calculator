@@ -12,8 +12,8 @@ class TipCalc
     meal_plus_tax = @meal + calculate_rate(@meal, @tax)
     total = meal_plus_tax + calculate_rate(meal_plus_tax, @tip)
     puts "cost of meal $#{@meal}"
-    puts "tax #{@tax}%"
-    puts "tip #{@tip}%"
+    puts "tax #{@tax.to_i}%"
+    puts "tip #{@tip.to_i}%"
     puts "total amount due: $%.2f\n" % total
   end
 
@@ -40,7 +40,7 @@ class TipCalc
   def random_tip
     puts "*rolls dice.. 0 <-> 30"
     output = (0..30).map { |i| i }
-    @tip = output.sample
+    @tip = output.sample.to_f
   end
 end
 
