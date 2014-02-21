@@ -19,6 +19,7 @@ class TipCalc
     puts "tax #{@tax.to_i}%"
     puts "tip #{@tip.to_i}%"
     puts "total amount due: $%.2f\n" % total
+    gets
   end
 
   def grab_user_values
