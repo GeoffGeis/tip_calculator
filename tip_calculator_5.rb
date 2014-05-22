@@ -1,10 +1,5 @@
 class TipCalc
   def initialize
-    @meal, @tip, @tax = 0, 0, 0
-    grab_user_values
-  end
-  
-  def grab_user_values
     puts "Please input the meal cost $0.00"
     @meal = gets.chomp.to_f
     puts "Please input the tax 0%"
